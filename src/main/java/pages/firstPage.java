@@ -27,7 +27,27 @@ public class firstPage {
 //		elementutils.doSendKeys(password, pwd);
 //		return this;
 //	}
+	public firstPage validation() {
 		
+		String sts = elementutils.dogetText(status);
+		//String env = elementutils.dogetText(environment);
+		
+		Reporter.log("Test Result: ");
+		String Expct =  ("UP");
+		Reporter.log("Expected Result : Status = " + Expct);
+		String Actl = (sts);
+		Reporter.log("Actual Result : Status = " + Actl);
+		if(Expct.equals(Actl)) { //env.equalsIgnoreCase("test")) {
+			
+			Reporter.log("Result: Passed");
+		}else {
+			System.out.println(Expct);
+			System.out.println(Actl);
+			Reporter.log("Result: Failed");
+		}
+		Assert.assertEquals(Expct, Actl);
+		return this;
+	}
 	
 			
 			public firstPage getValue() {
@@ -48,25 +68,5 @@ public class firstPage {
 				
 			}
 			
-			public firstPage validation() {
-				
-				String sts = elementutils.dogetText(status);
-				//String env = elementutils.dogetText(environment);
-				
-				Reporter.log("Test Result: ");
-				String Expct =  ("UP");
-				Reporter.log("Expected Result : Status = " + Expct);
-				String Actl = (sts);
-				Reporter.log("Actual Result : Status = " + Actl);
-				if(Expct.equals(Actl)) { //env.equalsIgnoreCase("test")) {
-					
-					Reporter.log("Result: Passed");
-				}else {
-					System.out.println(Expct);
-					System.out.println(Actl);
-					Reporter.log("Result: Failed");
-				}
-				Assert.assertEquals(Expct, Actl);
-				return this;
-			}
+		
 	}
