@@ -11,11 +11,10 @@ package test;
 		
 		@Test
 		public void firstPageTest() {
-			
-			firstPage.validation();
+		
 			firstPage.getValue();
 			firstPage.getPageUrl();
-		
+			firstPage.validation();
 			
 		}
 		
